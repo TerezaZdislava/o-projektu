@@ -60,7 +60,13 @@ form {
   color: rgb(0, 0, 0);
   justify-content: center;
 }
-button {
+.tlacitko {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+}
+.btn {
   width: 10rem;
   height: 5rem;
   background-color: rgb(22, 107, 37);

@@ -157,37 +157,39 @@ class Questions extends React.Component {
               </div>
             ))}
             {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={isSubmitting}
-              onClick={() => {
-                const odpovedi = [
-                  'A',
-                  'B',
-                  'B',
-                  'A',
-                  'A',
-                  'A',
-                  'B',
-                  'B',
-                  'A',
-                  'B',
-                  'A',
-                  'B',
-                ];
-                let vysledek = 0;
-                for (let i = 0; i < odpovedi.length; i++) {
-                  if (values.answers[i].answer === odpovedi[i]) {
-                    vysledek++;
+            <div className="tlacitko">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubmitting}
+                onClick={() => {
+                  const odpovedi = [
+                    'A',
+                    'B',
+                    'B',
+                    'A',
+                    'A',
+                    'A',
+                    'B',
+                    'B',
+                    'A',
+                    'B',
+                    'A',
+                    'B',
+                  ];
+                  let vysledek = 0;
+                  for (let i = 0; i < odpovedi.length; i++) {
+                    if (values.answers[i].answer === odpovedi[i]) {
+                      vysledek++;
+                    }
                   }
-                }
-                console.log(vysledek);
-                alert('Získali jste celkem ' + vysledek + ' bodů 🎉');
-              }}
-            >
-              Výsledek
-            </button>
+                  console.log(vysledek);
+                  alert('Získali jste celkem ' + vysledek + ' bodů 🎉');
+                }}
+              >
+                Výsledek
+              </button>
+            </div>
           </form>
         )}
       </Formik>
