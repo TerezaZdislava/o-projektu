@@ -1,28 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.html';
-import './danca.html';
-import './main.html';
 
 ReactDOM.render(
-  <div>
-    <div className="navigace">
-      <a href="main.html">Zpět domů</a>
-      <ul id="navItems">
-        <li>
-          <a className="nav-link" href="index.html">
-            Terka
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="danca.html">
-            Danča
-          </a>
-        </li>
-      </ul>
-    </div>
-    <h1>Podnikni se mnou malý virtuální výlet z gauče!</h1>
+  <div className="content">
+    <h1>Podnikni virtuální výlet z gauče!</h1>
     <div className="intro">
       <p>
         Milý návštěvnku, místo vyprávění o sobě jsem Ti přichystala jsem kvíz,
@@ -35,6 +17,7 @@ ReactDOM.render(
         chvíli ho budu tvořit na projektu a mnohem obsáhlejší, tak ať to mám
         potrénované.
       </p>
+      <p className="cta">👇 Otestuj své znalosti 👇</p>
     </div>
     <App />
   </div>,

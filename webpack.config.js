@@ -1,16 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-
 const CopyPlugin = require('copy-webpack-plugin');
-
-// const htmlWebpackPlugin = new HtmlWebPackPlugin({
-//   template: './src/index.html',
-//   filename: './index.html',
-// });
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: './src/index.html',
-  filename: './index.html',
-});
-
 module.exports = {
   module: {
     rules: [
@@ -46,7 +35,10 @@ module.exports = {
     ],
   },
   plugins: [
-    htmlWebpackPlugin,
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -54,37 +46,12 @@ module.exports = {
           to: 'assets',
           noErrorOnMissing: true,
         },
+        {
+          from: 'src/html',
+          to: '',
+          noErrorOnMissing: true,
+        },
       ],
     }),
   ],
 };
-// plugins: [
-//   new HtmlWebPackPlugin({
-//     template: './src/main.html',
-//     inject: true,
-//     chunks: ['index'],
-//     filename: 'main.html',
-//   }),
-//   new HtmlWebPackPlugin({
-//     template: './src/danca.html',
-//     inject: true,
-//     chunks: ['index'],
-//     filename: 'danca.html',
-//   }),
-//   new HtmlWebPackPlugin({
-//     template: './src/index.html',
-//     inject: true,
-//     chunks: ['index'],
-//     filename: 'index.html',
-//   }),
-//   new CopyPlugin({
-//     patterns: [
-//       {
-//         from: 'src/assets',
-//         to: 'assets',
-//         noErrorOnMissing: true,
-//       },
-//     ],
-//   }),
-// ],
-// };

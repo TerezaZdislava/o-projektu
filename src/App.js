@@ -4,17 +4,88 @@ import { Formik } from 'formik';
 
 const questions = [
   {
-    question: 'Co je dnes za den?',
+    question: 'K čemu původně sloužil krásný kamenný dům na prvním obrázku?',
     choices: [
-      { option: 'A', answer: 'Pondeli' },
-      { option: 'B', answer: 'Ctrvtek' },
+      { option: 'A', answer: 'Jednalo se o plynárnu na acetylenový plyn.' },
+      { option: 'B', answer: 'Letní sídlo podivínského majitele.' },
     ],
   },
   {
-    question: 'Jaky je mesic',
+    question: 'V jaké obci se nachází "hobití" vinařské sklípky?',
     choices: [
-      { option: 'A', answer: 'leden' },
-      { option: 'B', answer: 'listopad' },
+      { option: 'A', answer: 'Bořetice' },
+      { option: 'B', answer: 'Vrbice' },
+    ],
+  },
+  {
+    question: 'Jak se jmenuje bizarní balvan na obrázku?',
+    choices: [
+      { option: 'A', answer: 'Tchýnina zadnice' },
+      { option: 'B', answer: 'Ďáblova prdel' },
+    ],
+  },
+  {
+    question: 'Můžete se v Edmundově soutěsce plavit na vlastní lodi?',
+    choices: [
+      { option: 'A', answer: 'Ne, pouze s místním převozníkem.' },
+      { option: 'B', answer: 'Ano ' },
+    ],
+  },
+  {
+    question: 'Je ledová Jeskyně víl v Českém Švýcarsku celoročně přístupná?',
+    choices: [
+      { option: 'A', answer: 'Ano' },
+      { option: 'B', answer: 'Ne' },
+    ],
+  },
+  {
+    question: 'Zámek Hrubá Skála, založil v 14. stol. jako hrad:',
+    choices: [
+      { option: 'A', answer: 'Rod Valdštejnů ' },
+      { option: 'B', answer: 'Rod Smiřických' },
+    ],
+  },
+  {
+    question: 'Ze spirálové rozhledny v Kobylí se pokocháte výhledem:',
+    choices: [
+      { option: 'A', answer: 'na vinohrady Slovácka' },
+      { option: 'B', answer: 'na vinohrady Pálavy' },
+    ],
+  },
+  {
+    question: 'Přehrada Les Království stojí na řece:',
+    choices: [
+      { option: 'A', answer: 'Orlici' },
+      { option: 'B', answer: 'Labi' },
+    ],
+  },
+  {
+    question: 'Bývalý nacistický důl a tábor pro zajatce Rolava se nachází:',
+    choices: [
+      { option: 'A', answer: 'V Karlovarském kraji' },
+      { option: 'B', answer: 'V Libereckém kraji' },
+    ],
+  },
+  {
+    question:
+      'Fantastické výhledy na přírodu Českého Švýcarska si vychutnáte z:',
+    choices: [
+      { option: 'A', answer: 'Vilemíniny vyhlídky' },
+      { option: 'B', answer: 'Mariiny vyhlídky' },
+    ],
+  },
+  {
+    question: 'Kostel na jednom z ostrůvků Novomlýnské nádrže se jmenuje:',
+    choices: [
+      { option: 'A', answer: 'kostela sv. Linharta' },
+      { option: 'B', answer: 'kostela sv. Jana Nepomuckého' },
+    ],
+  },
+  {
+    question: 'Skalní reliéfy Čertovy hlavy jsou vysoké:',
+    choices: [
+      { option: 'A', answer: '6 metrů' },
+      { option: 'B', answer: '9 metrů' },
     ],
   },
 ];
@@ -91,7 +162,20 @@ class Questions extends React.Component {
               className="btn btn-primary"
               disabled={isSubmitting}
               onClick={() => {
-                const odpovedi = ['B', 'A'];
+                const odpovedi = [
+                  'A',
+                  'B',
+                  'B',
+                  'A',
+                  'A',
+                  'A',
+                  'B',
+                  'B',
+                  'A',
+                  'B',
+                  'A',
+                  'B',
+                ];
                 let vysledek = 0;
                 for (let i = 0; i < odpovedi.length; i++) {
                   if (values.answers[i].answer === odpovedi[i]) {
@@ -102,7 +186,7 @@ class Questions extends React.Component {
                 alert('Získali jste celkem ' + vysledek + ' bodů 🎉');
               }}
             >
-              Submit
+              Výsledek
             </button>
           </form>
         )}
