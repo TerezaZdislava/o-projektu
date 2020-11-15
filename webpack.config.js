@@ -4,6 +4,7 @@ module.exports = {
   //musim zapsat i dalsi javascript
   //funguje to jako zacatek stromu
   //https://webpack.js.org/concepts/entry-points/
+  //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu
   entry: {
     main: './src/form.js',
   },
