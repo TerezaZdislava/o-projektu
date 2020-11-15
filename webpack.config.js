@@ -1,6 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
+  //musim zapsat i dalsi javascript
+  //funguje to jako zacatek stromu
+  //https://webpack.js.org/concepts/entry-points/
+  entry: {
+    main: './src/form.js',
+  },
   module: {
     rules: [
       {
@@ -35,6 +41,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/form.html',
+      filename: './form.html',
+    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
